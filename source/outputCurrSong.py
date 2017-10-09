@@ -9,7 +9,10 @@ import multiprocessing as mp
 import youtubeSongs as yt
 
 
+
 if __name__ == "__main__":
+    mc = memcache.Client(['127.0.0.1:11211'], debug=0)
+    userInput = "null"
     while True:
         yt.initYoutube() #only executes once!
 
@@ -18,7 +21,8 @@ if __name__ == "__main__":
         #uneccessary rn but may need to multiprocess for i3 implementatoin
         nextSong = mp.Process(target = yt.nextSong)
 
-        userInput = input()
+        userInput = mc.get("Value")
+
         if (userInput == "n"):
             nextSong.start()
             nextSong.join()
@@ -26,6 +30,10 @@ if __name__ == "__main__":
             yt.previousSong()
         elif (userInput == "r"):
             yt.replaySong()
+        else:
+            continue
+        mc.delete("Value")
+        time.sleep(5)
 
 
 

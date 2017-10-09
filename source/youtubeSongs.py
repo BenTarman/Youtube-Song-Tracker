@@ -96,7 +96,7 @@ def displayCurrSong():
         pass
     else:
         currUrl = browser.current_url
-        time.sleep(1.2)
+        time.sleep(1.5)
         elem = browser.find_element_by_class_name("style-scope ytd-video-primary-info-renderer")
 
         songName = ""
