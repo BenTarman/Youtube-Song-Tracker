@@ -1,3 +1,5 @@
+#!/home/ben/pythonCodes/Youtube-Song-Tracker/venv/bin/python3.5 -u 
+
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 import time
@@ -18,14 +20,10 @@ if __name__ == "__main__":
 
         yt.displayCurrSong()
 
-        #uneccessary rn but may need to multiprocess for i3 implementatoin
-        nextSong = mp.Process(target = yt.nextSong)
-
         userInput = mc.get("Value")
 
         if (userInput == "n"):
-            nextSong.start()
-            nextSong.join()
+            yt.nextSong()
         elif (userInput== "p"):
             yt.previousSong()
         elif (userInput == "r"):

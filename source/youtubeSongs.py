@@ -6,9 +6,9 @@ import memcache
 
 
 
-fp = webdriver.FirefoxProfile('/home/bentarman/.mozilla/firefox/rkvkm76d.default')
+fp = webdriver.FirefoxProfile('/home/ben/.mozilla/firefox/ome6277w.youtubeMusic')
 
-browser = webdriver.Firefox(fp)
+browser = webdriver.Firefox(fp, executable_path='/usr/local/share/geckodriver')
 browser.get("https://www.youtube.com/")
 
 def run_once(f):
@@ -47,7 +47,7 @@ def initYoutube():
     elem = browser.find_element_by_xpath('//div[@id="password"]')
     elem.send_keys(sys.argv[1], Keys.RETURN)
 
-    time.sleep(3)
+    time.sleep(8)
     #search for music
     elem = browser.find_element_by_id("search-input")
     elem.send_keys("my mix", Keys.RETURN)
