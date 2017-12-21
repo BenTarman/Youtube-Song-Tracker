@@ -1,10 +1,10 @@
-Youtube a playlist called "My Mix" which contains the music you listen too
+Youtube makes a playlist called "My Mix" which contains the music you listen too
 frequently. Since I use youtube as my main "music player" this program
 attempts to emulate traditional music players like itunes via web automation of
 youtube.
 
 
-Currently this is only using my local firefox  profile and uses jsut a terminal.
+Currently this is only using my local firefox  profile and uses just a terminal.
 Though the scripts can be added to taskbars such as polybar relatively easily.
 
 
@@ -12,7 +12,7 @@ Though the scripts can be added to taskbars such as polybar relatively easily.
 install:
 1. sudo apt-get install memcached python-memcache
 2. place firefox profile in youtubeSongs.py in first line.
-3. Make script executable run with "./outputCurrSong.py <gmail-password>"
+3. Make script executable run with "./outputCurrSong.py 'gmail-password'"
 4. Other scripts can be run to modify current selenium session.
 
 
