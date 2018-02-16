@@ -6,9 +6,9 @@ import memcache
 
 
 
-fp = webdriver.FirefoxProfile('/home/ben/.mozilla/firefox/ome6277w.youtubeMusic')
+fp = webdriver.FirefoxProfile('/u/af/bi/btarman/.mozilla/firefox/w0kdu253.default')
 
-browser = webdriver.Firefox(fp, executable_path='/usr/local/share/geckodriver')
+browser = webdriver.Firefox(fp, executable_path='/u/af/bi/btarman/bin/geckodriver')
 browser.get("https://www.youtube.com/")
 
 def run_once(f):
@@ -42,18 +42,18 @@ def initYoutube():
     #elem = browser.find_element_by_id("identifierId")
     #elem.send_keys("email here", Keys.RETURN)
 
-    time.sleep(1)
+    time.sleep(3)
 
-    elem = browser.find_element_by_xpath('//div[@id="password"]')
+    elem = browser.find_element_by_xpath('//input[@name="password"]')
     elem.send_keys(sys.argv[1], Keys.RETURN)
 
     time.sleep(8)
     #search for music
-    elem = browser.find_element_by_id("search-input")
+    elem = browser.find_element_by_xpath('//input[@id="search"]')
     elem.send_keys("my mix", Keys.RETURN)
     time.sleep(5)
 
-    elem = browser.find_element_by_class_name("style-scope ytd-thumbnail-overlay-hover-text-renderer")
+    elem = browser.find_element_by_xpath('//span[@title="My Mix"]')
     time.sleep(2)
     elem.click()
 
